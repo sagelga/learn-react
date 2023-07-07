@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputBar from './InputBar';
 import InputAction from './InputAction';
+import styles from './InputBox.module.css';
 
 const defaultFormValue = {
     currentSavings: null,
@@ -44,8 +45,8 @@ const InputBox = (props) => {
     };
 
     return (
-        <form className="form" onSubmit={submitHandler}>
-            <div className="input-group">
+        <form className={styles.form} onSubmit={submitHandler}>
+            <div className={styles['input-group']}>
                 <InputBar
                     id="current-savings"
                     label="Current Savings ($)"
@@ -59,7 +60,7 @@ const InputBox = (props) => {
                     value={formData.yearlyContribution}
                 />
             </div>
-            <div className="input-group">
+            <div className={styles['input-group']}>
                 <InputBar
                     id="expected-return"
                     label="Expected Interest (%, per year)"

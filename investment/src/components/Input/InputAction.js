@@ -1,12 +1,13 @@
 import React from 'react';
+import styles from "./InputAction.module.css";
 
 const InputAction = (props) => {
     return (
-        <p className="actions">
+        <p className={styles.action}>
             <button
                 id="form"
                 type="reset"
-                className="buttonAlt"
+                className={styles.buttonAlt}
                 onClick={props.resetHandler}
             >
                 Reset
@@ -14,7 +15,7 @@ const InputAction = (props) => {
             <button
                 id="form"
                 type="submit"
-                className="button"
+                className={styles.button}
                 onClick={props.submitHandler}
             >
                 Calculate

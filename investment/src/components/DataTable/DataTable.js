@@ -1,3 +1,6 @@
+import React from 'react';
+import styles from './DataTable.module.css';
+
 const DataTable = (props) => {
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -7,11 +10,11 @@ const DataTable = (props) => {
     });
 
     if (props.data.length === 0) {
-        return <p>No Data</p>;
+        return <p style={{textAlign: 'center'}}>No Data</p>;
     }
 
     return (
-        <table className="result">
+        <table className={styles.result}>
             <thead>
                 <tr>
                     <th>Year</th>
