@@ -1,0 +1,16 @@
+import React from 'react'
+import styles from './Header.module.css'
+
+// interface HeaderProps {
+//     header: string;
+// }
+
+const Header = () => {
+    return (
+        <div className={styles.header}>
+            <h1>ReactMeals</h1>
+        </div>
+    )
+}
+
+export default Header

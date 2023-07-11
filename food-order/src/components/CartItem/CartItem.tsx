@@ -1,23 +1,32 @@
-import classes from './CartItem.module.css';
+import React from 'react'
+import classes from './CartItem.module.css'
 
-const CartItem = (props) => {
-  const price = `$${props.price.toFixed(2)}`;
+interface CartItemProps {
+    name: string
+    amount: string
+    price: number
+    onRemove: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onAdd: React.MouseEventHandler<HTMLButtonElement> | undefined
+}
 
-  return (
-    <li className={classes['cart-item']}>
-      <div>
-        <h2>{props.name}</h2>
-        <div className={classes.summary}>
-          <span className={classes.price}>{price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
-        </div>
-      </div>
-      <div className={classes.actions}>
-        <button onClick={props.onRemove}>−</button>
-        <button onClick={props.onAdd}>+</button>
-      </div>
-    </li>
-  );
-};
+const CartItem = (props: CartItemProps) => {
+    const price = `$${props.price.toFixed(2)}`
 
-export default CartItem;
+    return (
+        <li className={classes['cart-item']}>
+            <div>
+                <h2>{props.name}</h2>
+                <div className={classes.summary}>
+                    <span className={classes.price}>{price}</span>
+                    <span className={classes.amount}>x {props.amount}</span>
+                </div>
+            </div>
+            <div className={classes.actions}>
+                <button onClick={props.onRemove}>−</button>
+                <button onClick={props.onAdd}>+</button>
+            </div>
+        </li>
+    )
+}
+
+export default CartItem
