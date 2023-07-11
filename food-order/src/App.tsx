@@ -1,16 +1,18 @@
 import React from 'react'
-import './App.css'
-import Header from './components/Header/Header'
-import MealsSummary from './components/MealsSummary/MealsSummary'
+import styles from './App.module.css'
+import Header from './components/UI/Header'
+import MealsSummary from './components/Meal/MealsSummary'
 import { DUMMY_MEALS } from './data/dummy-meals'
+import MealItemForm from './components/Meal/MealItemForm'
+import AvailableMeals from './components/Meal/AvailableMeals'
 
 function App() {
     return (
-        <div className="App">
+        <>
             <Header></Header>
             <MealsSummary></MealsSummary>
-            {/* Menu List */}
-        </div>
+            <AvailableMeals mealList={DUMMY_MEALS} />
+        </>
     )
 }
 
