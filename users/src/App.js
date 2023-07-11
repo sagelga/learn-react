@@ -6,16 +6,39 @@ import UserList from './components/UserList';
 
 const App = () => {
     const [userList, setUserList] = useState([]);
+    const [modalMessage, setModalMessage] = useState('');
 
-    const submitHandler = (data) => {
+    const addUserHandler = (data) => {
         setUserList([...userList, data]);
+    };
+
+    const deleteUserHandler = (key) => {
+        setUserList(userList.filter((user) => user.key !== key));
+    };
+
+    const inputInvalidHandler = (message) => {
+        console.log(message);
+        setModalMessage(message);
+    };
+
+    const hideModalHandler = (message) => {
+        setModalMessage('');
     };
 
     return (
         <div className="App">
-            <InputCard submitHandler={submitHandler} />
-            <UserList userList={userList} />
-            <Modal />
+            <InputCard
+                addUserHandler={addUserHandler}
+                inputInvalidHandler={inputInvalidHandler}
+            />
+            <UserList
+                userList={userList}
+                deleteUserHandler={deleteUserHandler}
+            />
+            <Modal
+                modalMessage={modalMessage}
+                hideModalHandler={hideModalHandler}
+            />
         </div>
     );
 };

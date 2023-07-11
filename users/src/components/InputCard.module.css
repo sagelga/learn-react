@@ -1,39 +1,26 @@
-.card {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-
-.title {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.formGroup {
-    margin-bottom: 10px;
-}
-
-.label {
-    font-weight: bold;
-}
-
 .input {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 40rem;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input input {
+    font: inherit;
+    display: block;
     width: 100%;
-    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
 }
 
-.button {
-    background-color: purple;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #6b38cc;
+.input input:focus {
+    outline: none;
+    border-color: #4f005f;
 }
