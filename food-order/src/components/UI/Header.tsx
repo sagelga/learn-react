@@ -8,12 +8,12 @@ import styles from './Header.module.css'
 import mealsImage from '../../assets/meals.jpg'
 import HeaderCartButton from '../Cart/HeaderCartButton'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <>
             <div className={styles.header}>
                 <h1>ReactMeals</h1>
-                <HeaderCartButton />
+                <HeaderCartButton showCartHandler={props.showCartHandler} />
             </div>
             <div>
                 <img

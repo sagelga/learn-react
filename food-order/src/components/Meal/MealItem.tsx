@@ -1,15 +1,9 @@
 import React from 'react'
 import styles from './MealItem.module.css'
 import MealItemForm from './MealItemForm'
+import { ShoppingCartItem } from '../../interfaces'
 
-interface MealItemProps {
-    id: string
-    name: string
-    description: string
-    price: number
-}
-
-const MealItem = (props: MealItemProps) => {
+const MealItem = (props: ShoppingCartItem) => {
     return (
         <div className={styles.meal}>
             <span>

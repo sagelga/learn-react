@@ -1,24 +1,22 @@
 import React from 'react'
 import Card from '../UI/Card'
 import MealItem from './MealItem'
-import MealItemForm from './MealItemForm'
 import styles from './AvailableMeals.module.css'
+import { ShoppingCartItem } from '../../interfaces'
+import { DUMMY_MEALS } from '../../data/dummy-meals'
 
-interface MealType {
-    id: string
-    name: string
-    description: string
-    price: number
+interface IAvailableMeals {
+    addToCartHandler: (item: ShoppingCartItem) => void
 }
 
-interface AvailableMealsProps {
-    mealList: MealType[]
-}
+const AvailableMeals: React.FC<IAvailableMeals> = props => {
+    const addToCartHandler = (data: ShoppingCartItem) => {
+        props.addToCartHandler(data)
+    }
 
-const AvailableMeals = (props: AvailableMealsProps) => {
     return (
-        <Card>
-            {props.mealList.map((element: MealType) => {
+        <Card className={styles.meal}>
+            {DUMMY_MEALS.map((element: ShoppingCartItem) => {
                 return (
                     <div key={element.id}>
                         <MealItem
