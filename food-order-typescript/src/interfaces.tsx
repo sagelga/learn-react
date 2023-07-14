@@ -15,4 +15,5 @@ export interface MenuItem {
 
 export interface ICart {
     shoppingCart: ShoppingCartItem[]
+    hideCartHandler: any
 }
