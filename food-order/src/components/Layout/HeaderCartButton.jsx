@@ -1,24 +1,25 @@
-import React from 'react';
-import styles from './HeaderCartButton.module.css';
-import CartIcon from './CartIcon';
-import { CheckoutContext } from '../../context/CheckoutContext';
+import React, {useContext} from 'react';
+import classes from './HeaderCartButton.module.css';
+import CartIcon from '../Cart/CartIcon';
+import CartContext from "../../store/cart-context";
 
-const HeaderCartButton = () => {
-    // const checkout = React.useContext(CheckoutContext)
+const HeaderCartButton = (props) => {
+    const cartContext = useContext(CartContext)
 
-    const cartButtonHandler = (event) => {
-        console.log('cart button pressed')
-    }
-
+    const cartItemCount = cartContext.items.reduce((curNum, item) => {
+        return curNum + item.amount
+    }, 0)
 
     return (
-        <CheckoutContext.Provider >
-            <button className={styles.button} onClick={cartButtonHandler}>
-                <CartIcon className={styles.icon} />
+        <button className={classes.button} onClick={props.onClick}>
+                <span>
+                <CartIcon className={classes.icon}/>
+                </span>
+            <span>
                 Your Cart
-                <span className={styles.badge}>1</span>
-            </button>
-        </CheckoutContext.Provider>
+                </span>
+            <span className={classes.badge}>{cartItemCount}</span>
+        </button>
     );
 };
 
