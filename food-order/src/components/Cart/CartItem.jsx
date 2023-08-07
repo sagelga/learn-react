@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const CartItem = () => {
+const CartItem = () => {};
 
-}
-
-export default CartItem
+export default CartItem;

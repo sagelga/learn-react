@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const MealItem = () => {
+const MealItem = () => {};
 
-}
-
-export default MealItem
+export default MealItem;
