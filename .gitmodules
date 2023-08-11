@@ -1,0 +1,6 @@
+[submodule "food-order-ts"]
+	path = food-order-ts
+	url = https://github.com/sagelga/learn-react-foodOrder-ts.git
+[submodule "food-order-redux"]
+	path = food-order-redux
+	url = https://github.com/sagelga/learn-react-foodOrder-redux.git
